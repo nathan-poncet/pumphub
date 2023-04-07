@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { popup, type PopupSettings, Autocomplete } from '@skeletonlabs/skeleton';
 	import type { CategoriesResponse } from '../../../pocketbase-types';
 
 	export let categories: CategoriesResponse[];
@@ -32,10 +31,4 @@
 	use:popup={popupSettings}
 />
 <div data-popup="popupCategoriesAutocomplete">
-	<Autocomplete
-		bind:input
-		options={inputOptions}
-		on:selection={onPopupSelect}
-		class="card max-h-48 w-full max-w-sm overflow-y-auto p-4"
-	/>
 </div>

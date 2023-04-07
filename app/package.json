@@ -15,9 +15,7 @@
 		"typegen": "pocketbase-typegen --db ../backend/pb_data/data.db --out ./src/pocketbase-types.ts"
 	},
 	"devDependencies": {
-		"@floating-ui/dom": "^1.2.5",
 		"@playwright/test": "^1.28.1",
-		"@skeletonlabs/skeleton": "^1.1.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@tailwindcss/forms": "^0.5.3",
@@ -37,6 +35,7 @@
 		"svelte-check": "^3.0.1",
 		"svelte-icons": "^2.1.0",
 		"svelte-preprocess": "^4.10.7",
+		"svelte-use-click-outside": "^1.0.0",
 		"tailwindcss": "^3.1.5",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",

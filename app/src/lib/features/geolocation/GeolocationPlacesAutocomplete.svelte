@@ -1,13 +1,4 @@
 <script lang="ts">
-	import {
-		Autocomplete,
-		popup,
-		type AutocompleteOption,
-		type PopupSettings,
-		ListBox,
-		ListBoxItem
-	} from '@skeletonlabs/skeleton';
-
 	let valueSingle: string = 'places';
 	let input: string = '';
 	let inputOptions = <AutocompleteOption[]>[];
@@ -23,12 +14,13 @@
 
 	let fetchPlaces = async () => {
 		const response = await fetch(
-			`https://api.mapbox.com/geocoding/v5/mapbox.places/${input}.json?access_token=pk.eyJ1IjoiMWNibTEiLCJhIjoiY2xnNW43OXl3MDU5NjNscWlpdHA3amU0MyJ9.Xp14hyPIhCn_J5y1LBzBpA`
+			`https://api.mapbox.com/geocoding/v5/mapbox.places/${input}.json?limit=4&country=fr,ch&types=district,place,locality,neighborhood,address&access_token=pk.eyJ1IjoiMWNibTEiLCJhIjoiY2xnNW43OXl3MDU5NjNscWlpdHA3amU0MyJ9.Xp14hyPIhCn_J5y1LBzBpA`
 		);
 
 		const json = await response.json();
+		console.log(json);
 
-		inputOptions = json.features.map((result: any) => ({ label: result.text, value: result.id }));
+		inputOptions = json?.features?.map((result: any) => ({ label: result.place_name, value: result.id }));
 	};
 
 	$: (input || input === '') && fetchPlaces();
@@ -43,12 +35,4 @@
 	use:popup={popupSettings}
 />
 <div data-popup="popupGeolocationPlacesAutocomplete">
-	{#key inputOptions}
-		<Autocomplete
-			bind:input
-			options={inputOptions}
-			on:selection={onPopupSelect}
-			class="card w-full max-w-sm p-4"
-		/>
-	{/key}
 </div>
