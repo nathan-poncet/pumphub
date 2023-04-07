@@ -1,10 +1,5 @@
 <script lang="ts">
-	import {
-		popup,
-		type AutocompleteOption,
-		type PopupSettings,
-		Autocomplete
-	} from '@skeletonlabs/skeleton';
+	import { popup, type PopupSettings, Autocomplete } from '@skeletonlabs/skeleton';
 	import type { ActivitiesResponse } from '../../../pocketbase-types';
 
 	export let activities: ActivitiesResponse[];
@@ -20,7 +15,7 @@
 	let popupSettings: PopupSettings = {
 		event: 'focus',
 		target: 'popupActivitiesAutocomplete',
-		placement: 'bottom'
+		placement: 'bottom-start'
 	};
 
 	function onPopupSelect(event: any): void {
@@ -37,5 +32,10 @@
 	use:popup={popupSettings}
 />
 <div data-popup="popupActivitiesAutocomplete">
-	<Autocomplete bind:input options={inputOptions} on:selection={onPopupSelect} />
+	<Autocomplete
+		bind:input
+		options={inputOptions}
+		on:selection={onPopupSelect}
+		class="card max-h-48 w-full overflow-y-auto p-4"
+	/>
 </div>

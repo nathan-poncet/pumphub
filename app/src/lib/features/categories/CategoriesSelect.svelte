@@ -15,7 +15,7 @@
 	let popupSettings: PopupSettings = {
 		event: 'focus',
 		target: 'popupCategoriesAutocomplete',
-		placement: 'bottom'
+		placement: 'bottom-start'
 	};
 
 	function onPopupSelect(event: any): void {
@@ -32,5 +32,10 @@
 	use:popup={popupSettings}
 />
 <div data-popup="popupCategoriesAutocomplete">
-	<Autocomplete bind:input options={inputOptions} on:selection={onPopupSelect} />
+	<Autocomplete
+		bind:input
+		options={inputOptions}
+		on:selection={onPopupSelect}
+		class="card max-h-48 w-full max-w-sm overflow-y-auto p-4"
+	/>
 </div>

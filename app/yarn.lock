@@ -201,10 +201,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^0.7.3":
+  version: 0.7.3
+  resolution: "@floating-ui/core@npm:0.7.3"
+  checksum: f48f9fb0d19dcbe7a68c38e8de7fabb11f0c0e6e0ef215ae60b5004900bacb1386e7b89cb377d91a90ff7d147ea1f06c2905136ecf34dea162d9696d8f448d5f
+  languageName: node
+  linkType: hard
+
 "@floating-ui/core@npm:^1.2.4":
   version: 1.2.5
   resolution: "@floating-ui/core@npm:1.2.5"
   checksum: 6cda151bb098e0dbd5ac0db141715e00879bf08b21553a8895232ccf429d774e30019295b5a6d2da19dd927a34540fb49b55d926b82820e6002eac7b97405f76
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^0.5.2":
+  version: 0.5.4
+  resolution: "@floating-ui/dom@npm:0.5.4"
+  dependencies:
+    "@floating-ui/core": ^0.7.3
+  checksum: 9f9d8a51a828c6be5f187204aa6d293c6c9ef70d51dcc5891a4d85683745fceebf79ff8826d0f75ae41b45c3b138367d339756f27f41be87a8770742ebc0de42
   languageName: node
   linkType: hard
 
@@ -289,6 +305,42 @@ __metadata:
   bin:
     node-pre-gyp: bin/node-pre-gyp
   checksum: 1a98db05d955b74dad3814679593df293b9194853698f3f5f1ed00ecd93128cdd4b14fb8767fe44ac6981ef05c23effcfdc88710e7c1de99ccb6f647890597c8
+  languageName: node
+  linkType: hard
+
+"@mapbox/search-js-core@npm:^1.0.0-beta.14":
+  version: 1.0.0-beta.14
+  resolution: "@mapbox/search-js-core@npm:1.0.0-beta.14"
+  dependencies:
+    "@types/geojson": ^7946.0.8
+  checksum: 964103f437ab0a3a2280783ce70f12c18f8bcde231c2c1b6a508bc4185f34863489c937540774427fbac5cff22ff6c7c6058201a1095b85add8f4455de31cac1
+  languageName: node
+  linkType: hard
+
+"@mapbox/search-js-web@npm:^1.0.0-beta.14":
+  version: 1.0.0-beta.14
+  resolution: "@mapbox/search-js-web@npm:1.0.0-beta.14"
+  dependencies:
+    "@floating-ui/dom": ^0.5.2
+    "@mapbox/search-js-core": ^1.0.0-beta.14
+    "@mapbox/sphericalmercator": ^1.2.0
+    focus-trap: ^6.7.3
+    no-scroll: ^2.1.1
+  peerDependencies:
+    mapbox-gl: ">=2.7.0"
+  checksum: 1f632dfcb087c84de1572039bfab86e4ad80dd6f80cb32d29acbaf7a224b1ae1743f5580074ebd19293e00368a1eb2927b165abf22a2044be0597165c2869a1f
+  languageName: node
+  linkType: hard
+
+"@mapbox/sphericalmercator@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@mapbox/sphericalmercator@npm:1.2.0"
+  bin:
+    bbox: bin/bbox.js
+    to4326: bin/to4326.js
+    to900913: bin/to900913.js
+    xyz: bin/xyz.js
+  checksum: 515cd9fcadc6626d6352001f6d9dba073fcd10433ceee37d13d4be7fc9a48930b4163b79f53151b71ff9a4410da77bd11c5ff62e3b9d6119bce9031c4d7dabc1
   languageName: node
   linkType: hard
 
@@ -490,6 +542,13 @@ __metadata:
   version: 0.5.1
   resolution: "@types/cookie@npm:0.5.1"
   checksum: 9a8d60fc84797122bc399d6bd330fe5780dc7aab032321de705049ea925339f74658bfa418de483a625d51858770efef58df633ff2e20f1bdf7fbd74a52847e2
+  languageName: node
+  linkType: hard
+
+"@types/geojson@npm:^7946.0.8":
+  version: 7946.0.10
+  resolution: "@types/geojson@npm:7946.0.10"
+  checksum: 12c407c2dc93ecb26c08af533ee732f1506a9b29456616ba7ba1d525df96206c28ddf44a528f6a5415d7d22893e9d967420940a9c095ee5e539c1eba5fefc1f4
   languageName: node
   linkType: hard
 
@@ -763,6 +822,7 @@ __metadata:
   resolution: "app@workspace:."
   dependencies:
     "@floating-ui/dom": ^1.2.5
+    "@mapbox/search-js-web": ^1.0.0-beta.14
     "@playwright/test": ^1.28.1
     "@skeletonlabs/skeleton": ^1.1.0
     "@sveltejs/adapter-auto": ^2.0.0
@@ -1669,6 +1729,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"focus-trap@npm:^6.7.3":
+  version: 6.9.4
+  resolution: "focus-trap@npm:6.9.4"
+  dependencies:
+    tabbable: ^5.3.3
+  checksum: 0b4cebcc11010bd9397731092bd59a981e838c710c6497374ba70571875a14ab27c0db7d60f36005ec01bdabc3b9cfeda11d30ddf5b8874596dcc95e18913b3b
+  languageName: node
+  linkType: hard
+
 "form-data@npm:^4.0.0":
   version: 4.0.0
   resolution: "form-data@npm:4.0.0"
@@ -2562,6 +2631,13 @@ __metadata:
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
   checksum: b8ffeb1e262eff7968fc90a2b6767b04cfd9842582a9d0ece0af7049537266e7b2506dfb1d107a32f06dd849ab2aea834d5830f7f4d0e5cb7d36e1ae55d021d9
+  languageName: node
+  linkType: hard
+
+"no-scroll@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "no-scroll@npm:2.1.1"
+  checksum: fe57464f42c806ed01af7a43a56dcb9799ebef8fd3fa86d6367769b5b1952b173ef01965b6e7202c9e78e8a2bf5333edca14f69354d276157ef00fba3a008739
   languageName: node
   linkType: hard
 
@@ -3694,6 +3770,13 @@ __metadata:
   version: 3.58.0
   resolution: "svelte@npm:3.58.0"
   checksum: c05625705961adc971e2bed6b86957c065f34e9d358390ad8dc953f8b4c956bb5ed297e3466f18c8080339cd26b973294489ee4094800fd75a8650fa1f6a9b52
+  languageName: node
+  linkType: hard
+
+"tabbable@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "tabbable@npm:5.3.3"
+  checksum: 1aa56e1bb617cc10616c407f4e756f0607f3e2d30f9803664d70b85db037ca27e75918ed1c71443f3dc902e21dc9f991ce4b52d63a538c9b69b3218d3babcd70
   languageName: node
   linkType: hard
 
