@@ -3,7 +3,7 @@
 	import HeaderSearchBar from '$lib/features/global/header/HeaderSearchBar.svelte';
 </script>
 
-<header class="bg-white">
+<header class="bg-white border">
 	<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div>
 			<a href="/" class="-m-1.5 p-1.5">

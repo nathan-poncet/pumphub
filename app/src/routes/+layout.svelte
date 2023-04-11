@@ -3,8 +3,8 @@
 	import Footer from '$lib/features/global/Footer.svelte';
 	import type { LayoutData } from './$types';
 	import Header from '$lib/features/global/header/Header.svelte';
-	import { activities } from '$lib/features/global/store/activities';
-	import { categories } from '$lib/features/global/store/categories';
+	import { activities } from '$lib/features/activities/store/activities';
+	import { categories } from '$lib/features/categories/store/categories';
 
 	export let data: LayoutData;
 

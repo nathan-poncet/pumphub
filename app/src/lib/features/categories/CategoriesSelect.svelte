@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { getImageURL } from '$lib/utils/getImageURL';
-	import { categories } from '../global/store/categories';
+	import { categories } from './store/categories';
+	import { selectedCategory } from './store/selectedCategory';
 
 	let input: string = '';
+	let isFocus = false;
 </script>
 
 <div
@@ -16,24 +18,38 @@
 		class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
 		placeholder="Dance"
 		bind:value={input}
+		on:focus={() => (isFocus = true)}
+		on:blur={() => {
+			isFocus = false;
+			input = $selectedCategory?.title ?? '';
+		}}
 	/>
 </div>
-<div class="my-5" />
-<div class="overflow-hidden rounded-md bg-white">
-	<!-- svelte-ignore a11y-no-redundant-roles -->
-	<ul role="list" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+<div
+	class="{isFocus
+		? 'max-h-80'
+		: 'max-h-0'} overflow-y-auto rounded-md bg-white transition-all duration-300 ease-out"
+>
+	<div class="my-5" />
+	<ul class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
 		{#each $categories as category}
-			<li
-				class="w-full overflow-hidden rounded-full border bg-white px-6 py-6 text-white shadow sm:px-6"
-				style="background-image: url('{getImageURL(
-					category.collectionId,
-					category.id,
-					category.image ?? ''
-				)}'); background-size: cover;"
-			>
-				<span class="text-xl">
-					{category.title}
-				</span>
+			<li>
+				<button
+					class="w-full overflow-hidden rounded-full border px-6 py-6 text-left text-white shadow sm:px-6"
+					style="background-image: url('{getImageURL(
+						category.collectionId,
+						category.id,
+						category.image ?? ''
+					)}'); background-size: cover;"
+					on:click={() => {
+						input = category.title ?? '';
+						selectedCategory.set(category);
+					}}
+				>
+					<span class="text-xl font-semibold">
+						{category.title}
+					</span>
+				</button>
 			</li>
 		{/each}
 	</ul>

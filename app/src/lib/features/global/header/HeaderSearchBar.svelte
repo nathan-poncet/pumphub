@@ -1,5 +1,7 @@
 <script lang="ts">
+	import ActivitiesSelect from '$lib/features/activities/ActivitiesSelect.svelte';
 	import CategoriesSelect from '$lib/features/categories/CategoriesSelect.svelte';
+	import GeolocationPlacesAutocomplete from '$lib/features/geolocation/GeolocationPlacesAutocomplete.svelte';
 	import MdSearch from 'svelte-icons/md/MdSearch.svelte';
 	import { clickOutside } from 'svelte-use-click-outside';
 
@@ -70,13 +72,13 @@
 		<div
 			class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
 		>
-			<CategoriesSelect />
+			<ActivitiesSelect />
 		</div>
 			<div class="mt-4" />
 		<div
 			class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
 		>
-			<CategoriesSelect />
+			<GeolocationPlacesAutocomplete />
 		</div>
 	</div>
 </div>
