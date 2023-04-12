@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import PostCard from '$lib/features/posts/PostCard.svelte';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+</script>
+
+<h2 class="text-3xl font-bold">All our activities</h2>
+<div class="mt-4 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+	{#each data.posts as post}
+		<PostCard {post} />
+	{/each}
+</div>

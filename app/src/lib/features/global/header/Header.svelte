@@ -8,7 +8,7 @@
 		<div>
 			<a href="/" class="-m-1.5 p-1.5">
 				<span class="sr-only">PumpHub</span>
-				<h1>PumpHub</h1>
+				<h1 class="text-xl font-semibold">PumpHub</h1>
 			</a>
 		</div>
 		<div class="flex-1">

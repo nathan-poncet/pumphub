@@ -19,29 +19,29 @@
 	aria-modal="true"
 	use:clickOutside={() => (isMenuOpen = false)}
 >
-	<div class="flex h-full rounded-full border bg-white p-2">
+	<div class="flex rounded-full border bg-white p-2">
 		<button
-			class="{categoryInput ? 'text-gray-900' : 'text-gray-500'} flex flex-1 items-center px-6 py-2"
+			class="{categoryInput ? 'text-gray-900' : 'text-gray-500'} flex flex-1 items-center px-6"
 			on:click={() => (isMenuOpen = true)}
 		>
 			{categoryInput || 'Category'}
 		</button>
 		<div class="mx-2 my-1 border-r-2" />
 		<button
-			class="{actityInput ? 'text-gray-900' : 'text-gray-500'} flex flex-1 items-center px-6 py-2"
+			class="{actityInput ? 'text-gray-900' : 'text-gray-500'} flex flex-1 items-center px-6"
 			on:click={() => (isMenuOpen = true)}
 		>
 			{actityInput || 'Activity'}
 		</button>
 		<div class="mx-2 my-1 border-r-2" />
 		<button
-			class="{placeInput ? 'text-gray-900' : 'text-gray-500'} flex flex-1 items-center px-6 py-2"
+			class="{placeInput ? 'text-gray-900' : 'text-gray-500'} flex flex-1 items-center px-6"
 			on:click={() => (isMenuOpen = true)}
 		>
 			{placeInput || 'Place'}
 		</button>
 		<div class="mx-2" />
-		<button class="w-12 rounded-full bg-rose-500 p-2 text-white">
+		<button class="h-10 w-10 rounded-full bg-rose-500 p-2 text-white">
 			<MdSearch />
 		</button>
 	</div>
@@ -57,7 +57,7 @@
 	<div
 		class="{isMenuOpen
 			? 'translate-y-0 opacity-100 sm:scale-100'
-			: 'pointer-events-none translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95'} fixed md:w-[80vw] md:max-w-5xl overflow-hidden rounded-lg bg-gray-50 p-4 shadow-xl transition-all duration-300 ease-out max-md:inset-0 sm:p-6 md:absolute md:top-full md:mt-6"
+			: 'pointer-events-none translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95'} fixed overflow-hidden rounded-lg bg-gray-50 p-4 shadow-xl transition-all duration-300 ease-out max-md:inset-0 sm:p-6 md:absolute md:top-full md:mt-6 md:w-[80vw] md:max-w-5xl"
 	>
 		<h2 class="text-xl font-bold sm:text-2xl">Search your best sport !</h2>
 
@@ -68,17 +68,26 @@
 		>
 			<CategoriesSelect />
 		</div>
-			<div class="mt-4" />
+
+		<div class="mt-4" />
+
 		<div
 			class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
 		>
 			<ActivitiesSelect />
 		</div>
-			<div class="mt-4" />
+
+		<div class="mt-4" />
+
 		<div
 			class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
 		>
 			<GeolocationPlacesAutocomplete />
+		</div>
+
+		<div class="mt-6" />
+		<div class="flex justify-end">
+			<button type="button" class="btn btn-primary">Rechercher</button>
 		</div>
 	</div>
 </div>
