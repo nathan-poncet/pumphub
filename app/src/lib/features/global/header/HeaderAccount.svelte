@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { currentUser, pb } from '$lib/pocketbase';
 	import MdMenu from 'svelte-icons/md/MdMenu.svelte';
-	import { page } from '$app/stores';
 	import { applyAction, enhance } from '$app/forms';
 
 	$: navigation = {
@@ -64,7 +63,7 @@
 						};
 					}}
 				>
-					<button type="button" role="menuitem">Sign out</button>
+					<button type="submit" role="menuitem">Sign out</button>
 				</form>
 			</li>
 		{/if}

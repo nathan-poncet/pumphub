@@ -41,7 +41,7 @@
 			{placeInput || 'Place'}
 		</button>
 		<div class="mx-2" />
-		<button class="h-10 w-10 rounded-full bg-rose-500 p-2 text-white">
+		<button class="btn btn-primary rounded-full p-2">
 			<MdSearch />
 		</button>
 	</div>
