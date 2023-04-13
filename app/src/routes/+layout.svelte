@@ -14,7 +14,7 @@
 
 <div class="background flex min-h-screen flex-col">
 	<Header />
-	<div class="container mx-auto mt-20 flex-1 flex">
+	<div class="mt-20 flex flex-1">
 		<slot />
 	</div>
 	<Footer />

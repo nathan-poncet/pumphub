@@ -1,93 +1,71 @@
 <script lang="ts">
 	import logo from '$lib/assets/undraw_friends_online_re_r7pq.svg';
+
+	const details = [
+		'Nous donnons de la visibilité au activités locales',
+		'Le sport près de chez soi',
+		'Accessible pour tous le monde',
+		'Participez au développement de la culture !'
+	];
 </script>
 
-<div class="flex min-h-screen flex-col items-center px-4 py-12">
-	<div class="flex flex-1 flex-col items-center md:flex-row">
-		<div class="py-12 text-center md:px-8 md:text-left">
-			<h1 class="mb-6 text-2xl tracking-wide text-pink-600">
-				Nouveau: <span class="tracking text-xl tracking-widest text-gray-800"
-					>Ouverture le 20 juin 2023</span
-				>
+<section class="max-w-7xl mx-auto flex min-h-screen flex-col items-center gap-16 px-4 py-12">
+	<div class="flex flex-1 flex-col gap-16 items-center justify-center md:flex-row">
+		<div class="py-12 text-center md:w-1/2 md:px-8 md:text-left">
+			<h1 class="mb-6 text-xl tracking-wide text-pink-600 md:text-2xl">
+				Nouveau: <span class="tracking text-lg tracking-widest text-gray-800 md:text-xl">
+					Ouverture le 20 juin 2023
+				</span>
 			</h1>
 			<h2 class="text-4xl font-bold tracking-widest">Trouve ton Sport facilement</h2>
-			<span class="content__container text-browngray my-6 block text-2xl font-light">
-				<ul class="content__container__list">
-					<li class="content__container__list__item xl:pl-3">Facile</li>
-					<li class="content__container__list__item xl:pl-3">Pres de chez toi</li>
-					<li class="content__container__list__item xl:pl-3">Pour tous</li>
-					<li class="content__container__list__item xl:pl-3">Facile</li>
-					<li class="content__container__list__item xl:pl-3">Pres de chez toi</li>
-					<li class="content__container__list__item xl:pl-3">Pour tous</li>
-					<li class="content__container__list__item xl:pl-3">Puissance</li>
+			<div class="my-6 h-[40px] overflow-hidden text-xl font-light md:text-2xl">
+				<ul class="animate">
+					{#each details as detail}
+						<li class="max-w-[80vw] overflow-hidden text-ellipsis whitespace-nowrap leading-[40px] xl:pl-3">
+							{detail}
+						</li>
+					{/each}
 				</ul>
-			</span>
-			<p class="text-4xl font-bold tracking-widest">tu cherches une activité ? Pense à Nous!</p>
+			</div>
+			<p class="text-4xl font-bold tracking-widest">tu cherches une activité ? Pense à nous !</p>
 		</div>
-		<div class="md:w-1/2">
+		<div class="w-1/2">
 			<img src={logo} alt="AWE.SOME hero" />
 		</div>
 	</div>
 	<a class="btn btn-primary" href="#about">More Information</a>
-</div>
+</section>
 
 <style>
-	.content__container {
-		overflow: hidden;
-		height: 40px;
-	}
-
-	.content__container__list {
-		list-style: none;
-
-		animation-name: change;
-		animation-duration: 20s;
-		animation-iteration-count: infinite;
-	}
-
-	.content__container__list__item {
-		margin: 0;
-		line-height: 40px;
+	.animate {
+		animation: change 20s ease-in-out infinite;
 	}
 
 	@keyframes change {
 		0%,
-		7.14%,
+		12.66%,
 		100% {
 			transform: translate3d(0, 0, 0);
 		}
-		14.28% {
-			transform: translate3d(0, -14.28%, 0);
+		16.66%,
+		29.32% {
+			transform: translate3d(0, -25%, 0);
 		}
-		21.42% {
-			transform: translate3d(0, -28.57%, 0);
+		33.32%,
+		45.98% {
+			transform: translate3d(0, -50%, 0);
 		}
-		28.57% {
-			transform: translate3d(0, -42.85%, 0);
+		49.98%,
+		62.64% {
+			transform: translate3d(0, -75%, 0);
 		}
-		35.71% {
-			transform: translate3d(0, -57.14%, 0);
+		66.64%,
+		79.3% {
+			transform: translate3d(0, -50%, 0);
 		}
-		42.85% {
-			transform: translate3d(0, -71.42%, 0);
-		}
-		53.5% {
-			transform: translate3d(0, -85.71%, 0);
-		}
-		64.28% {
-			transform: translate3d(0, -71.42%, 0);
-		}
-		71.42% {
-			transform: translate3d(0, -57.14%, 0);
-		}
-		78.54% {
-			transform: translate3d(0, -42.85%, 0);
-		}
-		85.71% {
-			transform: translate3d(0, -28.57%, 0);
-		}
-		92.85% {
-			transform: translate3d(0, -14.28%, 0);
+		83.3%,
+		95.96% {
+			transform: translate3d(0, -25%, 0);
 		}
 	}
 </style>

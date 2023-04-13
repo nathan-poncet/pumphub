@@ -5,13 +5,12 @@
 	export let form;
 </script>
 
-<div class="mx-auto flex w-full max-w-xl items-center">
-	<div class="w-full">
-		<h1 class="mb-8 text-2xl">Login</h1>
+<section class="flex w-full items-center px-5 py-12 md:px-12 lg:px-20">
+	<div class="mx-auto w-full max-w-xl">
+		<h2 class="text-4xl text-black">Sign In</h2>
 		<form
 			method="POST"
 			action="?/login"
-			class="w-full"
 			use:enhance={() => {
 				return async ({ result }) => {
 					pb.authStore.loadFromCookie(document.cookie);
@@ -19,26 +18,51 @@
 				};
 			}}
 		>
-			<div class="mb-4 gap-2">
-				<label class="label">
-					<span>Email</span>
-					<input type="email" name="email" placeholder="Email" class="input" required />
+			<div class="mt-4 space-y-6">
+				<div class="col-span-full">
+					<label class="label pt-0" for="email">
+						<span class="label-text">Email</span>
+					</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Email"
+						class="input w-full"
+						class:input-error={form?.error && form.data.email}
+						required
+					/>
 					{#if form?.error && form.data.email}
-						<p class="text-error-600 mt-4 text-sm">{form.data.email.message}</p>
+						<p class="text-error mt-3 text-sm">{form.data.email.message}</p>
 					{/if}
-				</label>
-				<label class="label mt-4">
-					<span>Password</span>
-					<input type="password" name="password" placeholder="Password" class="input" required />
+				</div>
+				<div class="col-span-full">
+					<label class="label pt-0" for="password">
+						<span class="label-text">Passord</span>
+					</label>
+					<input
+						type="password"
+						id="password"
+						name="password"
+						placeholder="Password"
+						class="input w-full"
+						class:input-error={form?.error && form.data.password}
+					/>
 					{#if form?.error && form.data.password}
-						<p class="text-error-600 mt-4 text-sm">{form.data.password.message}</p>
+						<p class="text-error mt-3 text-sm">{form.data.password.message}</p>
 					{/if}
-				</label>
-				{#if form?.error && Object.keys(form.data).length === 0}
-					<p class="text-error-600 mt-4 text-sm" id="email-error">{form.message}</p>
-				{/if}
-				<button class="btn variant-filled mt-8">Log in</button>
+				</div>
+
+				<div class="col-span-full">
+					{#if form?.error && Object.keys(form.data).length === 0}
+						<p class="text-error mt-4 text-sm">{form.message}</p>
+					{/if}
+				</div>
+
+				<div class="col-span-full">
+					<button class="btn variant-filled w-full" type="submit">Log in</button>
+				</div>
 			</div>
 		</form>
 	</div>
-</div>
+</section>

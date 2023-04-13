@@ -60,6 +60,7 @@ export type PostsRecord = {
 	description?: HTMLString
 	images?: string[]
 	active?: boolean
+	activity?: RecordIdString
 }
 
 export enum UsersLanguagesOptions {
@@ -78,7 +79,7 @@ export type UsersRecord = {
 export type ActivitiesResponse<Ti18n = unknown, Texpand = unknown> = ActivitiesRecord<Ti18n> & BaseSystemFields<Texpand>
 export type CategoriesResponse<Ti18n = unknown> = CategoriesRecord<Ti18n> & BaseSystemFields
 export type CommentsResponse<Texpand = unknown> = CommentsRecord & BaseSystemFields<Texpand>
-export type PostsResponse = PostsRecord & BaseSystemFields
+export type PostsResponse<Texpand = unknown> = PostsRecord & BaseSystemFields<Texpand>
 export type UsersResponse = UsersRecord & AuthSystemFields
 
 // Types containing all Records and Responses, useful for creating typing helper functions

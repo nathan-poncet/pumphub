@@ -2,6 +2,7 @@
 	import { currentUser, pb } from '$lib/pocketbase';
 	import MdMenu from 'svelte-icons/md/MdMenu.svelte';
 	import { applyAction, enhance } from '$app/forms';
+	import { getImageURL } from '$lib/utils/getImageURL';
 
 	$: navigation = {
 		pages: [
@@ -22,11 +23,17 @@
 		<div class="w-6">
 			<MdMenu />
 		</div>
-		<img
-			class="inline-block h-10 w-10 rounded-full"
-			src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-			alt=""
-		/>
+		{#if $currentUser}
+			<div class="h-10 w-10 rounded-full bg-gray-600">
+				{#if $currentUser.avatar}
+					<img
+						class="h-full w-full rounded-full"
+						src={getImageURL($currentUser.collectionId, $currentUser.id, $currentUser.avatar)}
+						alt=""
+					/>
+				{/if}
+			</div>
+		{/if}
 	</button>
 
 	<ul
