@@ -41,7 +41,7 @@
 			{#each options.features as option}
 				<li>
 					<button
-						class="btn btn-outline w-full items-center justify-start gap-4 border text-sm sm:text-lg font-medium"
+						class="btn btn-outline w-full items-center flex-nowrap justify-start gap-4 border text-sm font-medium sm:text-lg"
 						on:focus={() => (isFocus = true)}
 						on:blur={() => (isFocus = false)}
 						on:click={() => {
@@ -53,7 +53,9 @@
 						<div class="w-6">
 							<MdLocationOn />
 						</div>
-						{option.place_name}
+						<p class="w-full overflow-hidden line-clamp-2">
+							{option.place_name}
+						</p>
 					</button>
 				</li>
 			{/each}

@@ -1,7 +1,7 @@
 <section class="my-24 sm:my-32">
-	<div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+	<div class="mx-auto max-w-screen-2xl sm:px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
 		<div
-			class="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
+			class="relative isolate flex flex-wrap items-center gap-16 overflow-hidden bg-gray-900 px-6 py-16 shadow-2xl sm:rounded-3xl sm:px-16 lg:flex-nowrap lg:gap-x-20 lg:px-24"
 		>
 			<svg
 				viewBox="0 0 1024 1024"
@@ -22,7 +22,7 @@
 					</radialGradient>
 				</defs>
 			</svg>
-			<div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+			<div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:text-left">
 				<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
 					Propose ton activité !
 				</h2>
@@ -35,16 +35,14 @@
 					<a
 						href="/"
 						class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-						>Get started</a
 					>
-					<a href="/" class="text-sm font-semibold leading-6 text-white"
-						>Learn more <span aria-hidden="true">→</span></a
-					>
+						Fait toi connaitre
+					</a>
 				</div>
 			</div>
-			<div class="relative mt-16 h-80 lg:mt-8">
+			<div class="">
 				<img
-					class="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+					class="rounded-md bg-white/5 ring-1 ring-white/10"
 					src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 					alt="App screenshot"
 					width="1824"

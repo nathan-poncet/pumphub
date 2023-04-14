@@ -1,32 +1,55 @@
 <script lang="ts">
-	import logo from '$lib/assets/undraw_friends_online_re_r7pq.svg';
 	import PostSearch from '../posts/PostSearch.svelte';
-
-	const details = [
-		'Nous donnons de la visibilité au activités locales',
-		'Le sport près de chez soi',
-		'Accessible pour tous le monde',
-		'Participez au développement de la culture !'
-	];
 </script>
 
 <section class="background">
-	<div class="container mx-auto flex min-h-screen flex-col items-center gap-16 px-4 py-12">
-		<div class="flex flex-1 flex-col items-center justify-center gap-16 md:flex-row">
-			<div class="py-12 text-center md:w-1/2 md:px-8 md:text-left">
-				<h1 class="mb-6 text-xl tracking-wide text-pink-600 md:text-2xl">
-					Nouveau: <span class="tracking text-lg tracking-widest text-gray-800 md:text-xl">
+	<div class="mx-auto flex min-h-screen max-w-screen-2xl flex-col items-center gap-16 px-4 py-16">
+		<div class="flex flex-1 flex-col items-center justify-center sm:gap-16 lg:flex-row">
+			<div class="py-12 text-center lg:w-1/2 lg:px-8 lg:text-left">
+				<h1 class="mb-6 text-xl tracking-wide text-pink-600 lg:text-2xl">
+					Nouveau: <span class="tracking text-lg tracking-widest text-gray-800 lg:text-xl">
 						Ouverture le 20 juin 2023
 					</span>
 				</h1>
 				<h2 class="text-4xl font-bold tracking-widest">Trouve ton Sport facilement</h2>
-				<div class="my-10 text-xl md:text-2xl">
+				<div class="my-10 text-xl lg:text-2xl">
 					<PostSearch />
 				</div>
 				<p class="text-4xl font-bold tracking-widest">tu cherches une activité ? Pense à nous !</p>
 			</div>
-			<div class="w-1/2">
-				<img src={logo} alt="AWE.SOME hero" />
+			<div class="lg:w-1/2">
+				<div class="mt-6 grid grid-cols-2 grid-rows-2 gap-x-6 gap-y-6 lg:gap-8">
+					<div class="aspect-h-1 aspect-w-1 group row-span-2 overflow-hidden rounded-lg">
+						<img
+							src="https://images.unsplash.com/photo-1622599511051-16f55a1234d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80"
+							alt=""
+							class="object-cover object-center group-hover:opacity-75"
+						/>
+						<div aria-hidden="true" class="bg-gradient-to-b from-transparent to-black opacity-50" />
+					</div>
+					<div class="aspect-none group relative h-full overflow-hidden rounded-lg">
+						<img
+							src="https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+							alt=""
+							class="absolute inset-0 h-full w-full object-cover object-center group-hover:opacity-75"
+						/>
+						<div
+							aria-hidden="true"
+							class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"
+						/>
+					</div>
+					<div class="aspect-none group relative h-full overflow-hidden rounded-lg">
+						<img
+							src="https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
+							alt=""
+							class="absolute inset-0 h-full w-full object-cover object-center group-hover:opacity-75"
+						/>
+						<div
+							aria-hidden="true"
+							class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 		<a class="btn btn-primary" href="#about">More Information</a>

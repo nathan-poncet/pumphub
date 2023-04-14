@@ -39,7 +39,7 @@
 	<ul
 		role="menu"
 		tabindex="0"
-		class="menu dropdown-content bg-base-100 rounded-box mt-4 w-52 p-2 shadow"
+		class="menu dropdown-content bg-white rounded-box mt-4 w-52 p-2 shadow"
 	>
 		{#each navigation.pages as { name, href }, i}
 			<li>

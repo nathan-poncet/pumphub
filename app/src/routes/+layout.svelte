@@ -15,7 +15,7 @@
 <div class="h-full max-h-screen overflow-auto">
 	<div class="flex min-h-screen flex-col bg-white">
 		<Header />
-		<div class="mt-20 flex flex-1">
+		<div class="flex flex-1">
 			<slot />
 		</div>
 		<Footer />
