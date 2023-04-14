@@ -1,10 +1,20 @@
 <script lang="ts">
 	import { getImageURL } from '$lib/utils/getImageURL';
+	import { onDestroy } from 'svelte';
 	import { categories } from './store/categories';
 	import { selectedCategory } from './store/selectedCategory';
 
 	let input: string = '';
 	let isFocus = false;
+
+	const unsubscribeSelectedCategory = selectedCategory.subscribe((value) => {
+		if (value != null) return;
+		input = '';
+	});
+
+	onDestroy(() => {
+		unsubscribeSelectedCategory();
+	});
 </script>
 
 <label for="categorySearch" class="label pt-0">
@@ -25,11 +35,10 @@
 />
 
 <div
-	class="{isFocus
-		? 'max-h-80'
-		: 'max-h-0'} overflow-y-auto rounded-md bg-white transition-all duration-500 ease-out"
+	class="mt-0 max-h-0 overflow-y-auto rounded-md bg-white transition-all duration-500 ease-out"
+	class:max-h-80={isFocus}
+	class:mt-5={isFocus}
 >
-	<div class="my-5" />
 	<ul class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
 		{#each $categories as category}
 			<li>

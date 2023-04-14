@@ -31,9 +31,9 @@
 />
 
 <div
-	class="{isFocus
-		? 'max-h-80'
-		: 'max-h-0'} overflow-y-auto rounded-md bg-white transition-all duration-500 ease-out"
+	class="mt-0 max-h-0 overflow-y-auto rounded-md bg-white transition-all duration-500 ease-out"
+	class:max-h-80={isFocus}
+	class:mt-5={isFocus}
 >
 	<div class="my-5" />
 	<ul class="flex flex-col gap-4">
@@ -41,7 +41,7 @@
 			{#each options.features as option}
 				<li>
 					<button
-						class="flex w-full items-center gap-4 overflow-hidden rounded-full border bg-white px-4 py-4 shadow sm:px-4"
+						class="btn btn-outline w-full items-center justify-start gap-4 border text-sm sm:text-lg font-medium"
 						on:focus={() => (isFocus = true)}
 						on:blur={() => (isFocus = false)}
 						on:click={() => {
@@ -50,12 +50,10 @@
 							selectedPlace.set(option);
 						}}
 					>
-						<div class="w-8">
+						<div class="w-6">
 							<MdLocationOn />
 						</div>
-						<span class="text-xl">
-							{option.place_name}
-						</span>
+						{option.place_name}
 					</button>
 				</li>
 			{/each}

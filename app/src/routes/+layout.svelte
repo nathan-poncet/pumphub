@@ -12,10 +12,12 @@
 	activities.set(data.activities);
 </script>
 
-<div class="flex min-h-screen flex-col bg-white">
-	<Header />
-	<div class="mt-20 flex flex-1">
-		<slot />
+<div class="h-full max-h-screen overflow-auto">
+	<div class="flex min-h-screen flex-col bg-white">
+		<Header />
+		<div class="mt-20 flex flex-1">
+			<slot />
+		</div>
+		<Footer />
 	</div>
-	<Footer />
 </div>

@@ -4,6 +4,7 @@
 	import { selectedCategory } from '../categories/store/selectedCategory';
 	import { activities } from './store/activities';
 	import { selectedActivity } from './store/selectedActivity';
+	import { categories } from '../categories/store/categories';
 
 	let input: string = '';
 	let isFocus = false;
@@ -42,9 +43,9 @@
 />
 
 <div
-	class="{isFocus
-		? 'max-h-80'
-		: 'max-h-0'} overflow-y-auto rounded-md bg-white transition-all duration-500 ease-out"
+	class="mt-0 max-h-0 overflow-y-auto rounded-md bg-white transition-all duration-500 ease-out"
+	class:max-h-80={isFocus}
+	class:mt-5={isFocus}
 >
 	<div class="my-5" />
 	<ul class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -63,6 +64,9 @@
 						isFocus = false;
 						input = activity.title ?? '';
 						selectedActivity.set(activity);
+						selectedCategory.set(
+							$categories.find((category) => category.id === activity.category) ?? null
+						);
 					}}
 				>
 					<span class="text-xl font-semibold">
