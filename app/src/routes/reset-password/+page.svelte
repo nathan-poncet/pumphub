@@ -3,6 +3,7 @@
 	import { pb } from '$lib/pocketbase';
 
 	export let form;
+	let loading = false;
 </script>
 
 <section class="flex w-full items-center px-5 py-12 md:px-12 lg:px-20">
@@ -13,7 +14,9 @@
 			action="?/resetPassword"
 			method="POST"
 			use:enhance={() => {
+				loading = true;
 				return async ({ result }) => {
+					loading = false;
 					pb.authStore.loadFromCookie(document.cookie);
 					await applyAction(result);
 				};

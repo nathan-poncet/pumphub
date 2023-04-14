@@ -3,6 +3,7 @@
 	import { pb } from '$lib/pocketbase';
 
 	export let form;
+	let loading = false;
 </script>
 
 <section class="flex w-full items-center px-5 py-12 md:px-12 lg:px-20">
@@ -12,7 +13,9 @@
 			method="POST"
 			action="?/login"
 			use:enhance={() => {
+				loading = true;
 				return async ({ result }) => {
+					loading = false;
 					pb.authStore.loadFromCookie(document.cookie);
 					await applyAction(result);
 				};
@@ -53,6 +56,10 @@
 					{/if}
 				</div>
 
+				<div class="col-span-full text-right text-sm font-medium">
+					<a href="reset-password" class="link-primary">Forgot your password?</a>
+				</div>
+
 				<div class="col-span-full">
 					{#if form?.error && Object.keys(form.data).length === 0}
 						<p class="text-error mt-4 text-sm">{form.message}</p>
@@ -64,5 +71,12 @@
 				</div>
 			</div>
 		</form>
+
+		<div class="mt-16">
+			<div class="text-md text-center font-medium">
+				Don't have an account? &nbsp;
+				<a href="register" class="link-primary">Register</a>
+			</div>
+		</div>
 	</div>
 </section>

@@ -3,6 +3,7 @@
 	import { pb } from '$lib/pocketbase';
 
 	export let form;
+	let loading = false;
 </script>
 
 <section class="flex w-full items-center px-5 py-12 md:px-12 lg:px-20">
@@ -12,7 +13,9 @@
 			method="POST"
 			action="?/register"
 			use:enhance={() => {
+				loading = true;
 				return async ({ result }) => {
+					loading = false;
 					pb.authStore.loadFromCookie(document.cookie);
 					await applyAction(result);
 				};
@@ -76,9 +79,41 @@
 				</div>
 
 				<div class="col-span-full">
-					<button class="btn variant-filled w-full" type="submit">Register</button>
+					<button class="btn variant-filled w-full" type="submit" disabled={loading}>
+						{#if loading}
+							<svg
+								class="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+							>
+								<circle
+									class="opacity-25"
+									cx="12"
+									cy="12"
+									r="10"
+									stroke="currentColor"
+									stroke-width="4"
+								/>
+								<path
+									class="opacity-75"
+									fill="currentColor"
+									d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+								/>
+							</svg>
+						{:else}
+							Register
+						{/if}
+					</button>
 				</div>
 			</div>
 		</form>
+
+		<div class="mt-16">
+			<div class="text-md text-center font-medium">
+				Already have an account? &nbsp;
+				<a href="login" class="link-primary">Login</a>
+			</div>
+		</div>
 	</div>
 </section>
