@@ -1,4 +1,4 @@
-<div class="bg-white">
+<section class="my-24 sm:my-32">
   <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
     <div class="mx-auto max-w-4xl divide-y divide-gray-900/10">
       <h2 class="text-2xl font-bold leading-10 tracking-widest text-gray-900">
@@ -63,4 +63,4 @@
       </dl>
     </div>
   </div>
-</div>
+</section>

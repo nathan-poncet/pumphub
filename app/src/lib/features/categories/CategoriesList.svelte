@@ -3,7 +3,7 @@
 	import { getImageURL } from '$lib/utils/getImageURL';
 </script>
 
-<section class="bg-white py-24 sm:py-32">
+<section class="py-24 sm:py-32">
 	<div class="container mx-auto px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-widest text-gray-900 sm:text-4xl">
