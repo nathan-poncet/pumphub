@@ -8,7 +8,11 @@
 
 <a
 	href="/"
-	style="background-image: url({getImageURL(post.collectionId, post.id, post.images?.at(0) ?? '')});"
+	style="background-image: url({getImageURL(
+		post.collectionId,
+		post.id,
+		post.images?.at(0) ?? ''
+	)});"
 	class="relative block overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat"
 >
 	<div class="absolute inset-0 bg-black/25" />
@@ -21,13 +25,13 @@
 		</div>
 
 		<span
-			class="inline-flex items-center gap-0.5 rounded-full bg-black px-2 py-1 text-xs font-semibold text-white"
+			class="inline-flex items-center gap-0.5 rounded-full bg-white px-2 py-1 text-xs font-semibold"
 		>
 			4.5
 
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="h-4 w-4 text-yellow-300"
+				class="text-primary h-4 w-4"
 				viewBox="0 0 20 20"
 				fill="currentColor"
 			>

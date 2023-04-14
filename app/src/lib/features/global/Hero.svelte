@@ -1,5 +1,6 @@
 <script lang="ts">
 	import logo from '$lib/assets/undraw_friends_online_re_r7pq.svg';
+	import PostSearch from '../posts/PostSearch.svelte';
 
 	const details = [
 		'Nous donnons de la visibilité au activités locales',
@@ -9,8 +10,8 @@
 	];
 </script>
 
-<section class="max-w-7xl mx-auto flex min-h-screen flex-col items-center gap-16 px-4 py-12">
-	<div class="flex flex-1 flex-col gap-16 items-center justify-center md:flex-row">
+<section class="container mx-auto flex min-h-screen flex-col items-center gap-16 px-4 py-12">
+	<div class="flex flex-1 flex-col items-center justify-center gap-16 md:flex-row">
 		<div class="py-12 text-center md:w-1/2 md:px-8 md:text-left">
 			<h1 class="mb-6 text-xl tracking-wide text-pink-600 md:text-2xl">
 				Nouveau: <span class="tracking text-lg tracking-widest text-gray-800 md:text-xl">
@@ -18,14 +19,17 @@
 				</span>
 			</h1>
 			<h2 class="text-4xl font-bold tracking-widest">Trouve ton Sport facilement</h2>
-			<div class="my-6 h-[40px] overflow-hidden text-xl font-light md:text-2xl">
-				<ul class="animate">
+			<div class="my-6 text-xl font-light md:text-2xl">
+				<PostSearch />
+				<!-- <ul class="animate">
 					{#each details as detail}
-						<li class="max-w-[80vw] overflow-hidden text-ellipsis whitespace-nowrap leading-[40px] xl:pl-3">
+						<li
+							class="max-w-[80vw] overflow-hidden text-ellipsis whitespace-nowrap leading-[40px] xl:pl-3"
+						>
 							{detail}
 						</li>
 					{/each}
-				</ul>
+				</ul> -->
 			</div>
 			<p class="text-4xl font-bold tracking-widest">tu cherches une activité ? Pense à nous !</p>
 		</div>

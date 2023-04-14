@@ -13,7 +13,7 @@
 </script>
 
 <div
-	class="relative z-50 flex justify-center"
+	class="relative z-50"
 	aria-labelledby="modal-title"
 	role="dialog"
 	aria-modal="true"
@@ -57,37 +57,42 @@
 	<div
 		class="{isMenuOpen
 			? 'translate-y-0 opacity-100 sm:scale-100'
-			: 'pointer-events-none translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95'} fixed overflow-hidden rounded-lg bg-gray-50 p-4 shadow-xl transition-all duration-300 ease-out max-md:inset-0 sm:p-6 md:absolute md:top-full md:mt-6 md:w-[80vw] md:max-w-5xl"
+			: 'translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95'} pointer-events-none fixed inset-0 flex items-center justify-center transition-all duration-300 ease-out"
 	>
-		<h2 class="text-xl font-bold sm:text-2xl">Search your best sport !</h2>
-
-		<div class="mt-6" />
-
 		<div
-			class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
+			class="h-full w-full md:h-auto overflow-hidden rounded-lg bg-gray-50 p-4 shadow-xl sm:p-6 md:w-[80vw] md:max-w-5xl"
+			class:pointer-events-auto={isMenuOpen}
 		>
-			<CategoriesSelect />
-		</div>
+			<h2 class="text-xl font-bold sm:text-2xl">Search your best sport !</h2>
 
-		<div class="mt-4" />
+			<div class="mt-6" />
 
-		<div
-			class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
-		>
-			<ActivitiesSelect />
-		</div>
+			<div
+				class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
+			>
+				<CategoriesSelect />
+			</div>
 
-		<div class="mt-4" />
+			<div class="mt-4" />
 
-		<div
-			class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
-		>
-			<GeolocationPlacesAutocomplete />
-		</div>
+			<div
+				class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
+			>
+				<ActivitiesSelect />
+			</div>
 
-		<div class="mt-6" />
-		<div class="flex justify-end">
-			<button type="button" class="btn btn-primary">Rechercher</button>
+			<div class="mt-4" />
+
+			<div
+				class="rounded-lg border bg-white p-4 shadow-xl transition-all duration-300 ease-out sm:p-6"
+			>
+				<GeolocationPlacesAutocomplete />
+			</div>
+
+			<div class="mt-6" />
+			<div class="flex justify-end">
+				<button type="button" class="btn btn-primary">Rechercher</button>
+			</div>
 		</div>
 	</div>
 </div>
